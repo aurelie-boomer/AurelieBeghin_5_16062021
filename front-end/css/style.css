@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+}
+body {
+  font-family: "helvetia", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e4dfd2;
+}
+img {
+  object-fit: cover;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: #e4dfd2;
+}
+h1,
+h2 {
+  font-family: "finger paint";
+  color: #b14a0c;
+}
+
+.header {
+  display: flex;
+  height: 8rem;
+  background-color: #b14a0c;
+}
+.header_bloc {
+  padding-top: 1.3rem;
+  padding-left: 2rem;
+}
+.header_logo {
+  width: 50%;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+.nav_lien {
+  margin-right: 2rem;
+}
+.nav_lien:hover {
+  font-weight: bold;
+}
+.main {
+  height: 100%;
+}
+.main_titre {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.main_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_article {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.main_camera {
+  display: flex;
+  justify-content: center;
+}
+.main_image {
+  width: 90%;
+  border-radius: 0.5rem;
+  padding-top: 1rem;
+}
+.article_camera {
+  display: flex;
+  flex-direction: column;
+}
+.article_header {
+  display: flex;
+  justify-content: space-around;
+}
+.article_nom {
+  margin-top: 1.2rem;
+  padding-left: 0.5rem;
+}
+.article_prix {
+  font-weight: bold;
+  background-color: #e4dfd2;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+.article_description {
+  padding: 0.7rem 0 1rem 1.2rem;
+  font-weight: 400;
+  color: #5f5b5d;
+  font-family: "neucha";
+}
+
+.footer {
+  background-color: #b14a0c;
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.footer_liste {
+  list-style-type: none;
+  color: #e4dfd2;
+  font-family: "neucha";
+  line-height: 2rem;
+}
+.footer_social {
+  color: #e4dfd2;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 3rem;
+  margin-top: 2rem;
+}
