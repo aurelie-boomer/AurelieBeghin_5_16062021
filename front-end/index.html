@@ -31,39 +31,38 @@
   </head>
   <body>
     <header class="header">
-      <div class="header_bloc">
+      <div class="header__bloc">
         <img
-          class="header_logo"
+          class="header__logo"
           src="./logo-orinoco.png"
           alt="Logo du site Orinoco"
         />
       </div>
       <nav class="nav">
-        <div class="nav_lien"><a href="index.html">Accueil</a></div>
+        <div class="nav__lien"><a href="index.html">Accueil</a></div>
         <div>
           <a href="panier.html"><i class="fas fa-shopping-basket"></i></a>
         </div>
       </nav>
     </header>
     <!--*******************************************************-->
-    <main class="main">
-      <h1 class="main__titre">Nos appareils photo vintagesnode server</h1>
+    <main id="camerasList">
+      <h1 class="main__titre">Nos appareils photo vintages</h1>
       <section class="main__section">
-        <article class="main__article">
-          <a class="main__camera" href="camera.html"
-            ><img
-              class="main__image"
-              src="./images/vcam_1.jpg"
-              alt="Zurss 50S appareil photo vintage"
-          /></a>
-          <div class="article__camera">
-            <div class="article__header">
-              <h2 class="article__nom"></h2>
-              <span class="article__prix"></span>
-            </div>
-            <p class="article__description"></p>
-          </div>
-        </article>
+        <template id="cameraTemplate">
+          <article class="main__article">
+            <a href="camera.html">
+              <img id="cameraImg" src="" alt="" />
+              <div class="article__camera">
+                <div class="article__header">
+                  <h2 id="cameraName"></h2>
+                  <span class="article__prix" id="cameraPrice"></span>
+                </div>
+                <p class="article__description" id="cameraDescription"></p>
+              </div>
+            </a>
+          </article>
+        </template>
       </section>
     </main>
     <!--********************************************************-->

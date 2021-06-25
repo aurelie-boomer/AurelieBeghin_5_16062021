@@ -11,6 +11,7 @@ body {
 img {
   object-fit: cover;
   overflow: hidden;
+  border-radius: 0.5rem;
 }
 a {
   text-decoration: none;
@@ -27,79 +28,85 @@ h2 {
   height: 8rem;
   background-color: #b14a0c;
 }
-.header_bloc {
+.header__bloc {
   padding-top: 1.3rem;
   padding-left: 2rem;
 }
-.header_logo {
-  width: 50%;
+.header__logo {
+  width: 45%;
 }
 .nav {
   display: flex;
   align-items: center;
   padding-right: 2rem;
 }
-.nav_lien {
+.nav__lien {
   margin-right: 2rem;
 }
-.nav_lien:hover {
+.nav__lien:hover {
   font-weight: bold;
 }
 .main {
   height: 100%;
 }
-.main_titre {
+.main__titre {
   font-size: 1.5rem;
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.main_section {
+.main__section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.main_article {
+.main__article {
   display: flex;
   flex-direction: column;
-  width: 90%;
   background-color: white;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem;
+  padding: 1.5rem;
 }
-.main_camera {
+#cameraImg {
+  width: 100%;
+}
+.main__camera {
   display: flex;
   justify-content: center;
 }
-.main_image {
+.main__image {
   width: 90%;
   border-radius: 0.5rem;
   padding-top: 1rem;
 }
-.article_camera {
+.article__camera {
   display: flex;
   flex-direction: column;
 }
-.article_header {
+.article__header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
 }
-.article_nom {
+.article__nom {
   margin-top: 1.2rem;
   padding-left: 0.5rem;
 }
-.article_prix {
+.article__prix {
   font-weight: bold;
   background-color: #e4dfd2;
   padding: 0.5rem;
-  margin-top: 1rem;
   border-radius: 0.5rem;
+  color: black;
 }
-.article_description {
-  padding: 0.7rem 0 1rem 1.2rem;
+.article__description {
   font-weight: 400;
-  color: #5f5b5d;
+  color: black;
   font-family: "neucha";
+  text-align: justify;
 }
 
 .footer {
@@ -109,13 +116,14 @@ h2 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.footer_liste {
+.footer__liste {
   list-style-type: none;
   color: #e4dfd2;
   font-family: "neucha";
   line-height: 2rem;
+  font-size: 1.5rem;
 }
-.footer_social {
+.footer__social {
   color: #e4dfd2;
   font-size: x-large;
   display: flex;
@@ -123,4 +131,11 @@ h2 {
   align-items: center;
   line-height: 3rem;
   margin-top: 2rem;
+}
+.fas {
+  margin-right: 1rem;
+}
+.fas,
+.fab {
+  margin-bottom: 1rem;
 }
