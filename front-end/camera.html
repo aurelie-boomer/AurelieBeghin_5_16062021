@@ -5,48 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="INDEX,FOLLOW" />
-    <meta name="description" content="" />
+    <meta name="description" content="OriCam est un site de vente d'appareils
+    photo vintage professionnels avec des tailles de lentilles au choix"" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="" />
+    <script src="./js/camera.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="favicon.jpg" />
     <script
       src="https://kit.fontawesome.com/a60aae1ab2.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Nos appareils photo vintages</title>
   </head>
-  <body class="body">
-    <header></header>
-    <main>
-      <header class="header">
-        <div>
-          <a href="index.html">
-            <img
-              class="header_background header_logo"
-              src="./logo-orinoco.png"
-              alt="Logo orinico vente"
-            />
-          </a>
+  <body>
+    <header class="header">
+      <div class="header__bloc">
+        <p class="header__titre">OriCam</p>
+      </div>
+      <nav class="nav">
+        <div class="nav__retour"><a href="index.html">Accueil</a></div>
+        <div class="nav__panier">
+          <a href="panier.html"
+            ><i class="fas fa-shopping-basket nav__logo"></i
+          ></a>
         </div>
-        <nav class="nav">
-          <div><a href="index.html">Accueil</a></div>
-          <div>
-            <a href="panier.html"><i class="fas fa-shopping-basket"></i></a>
+      </nav>
+    </header>
+    <main>
+      <article class="main__article">
+        <img id="cameraImg" src="" alt="" />
+        <div class="article__camera">
+          <div class="article__header">
+            <h2 id="cameraName"></h2>
+            <span class="article__prix" id="cameraPrice"></span>
           </div>
-        </nav>
-      </header>
+          <p class="article__description" id="cameraDescription"></p>
+        </div>
+      </article>
     </main>
     <footer class="footer">
       <div>
-        <ul class="liste">
-          <li><a href="#"></a>Mentions légales</li>
-          <li><a href="#"></a>Contact</li>
-          <li><a href="#"></a>Conditions générales de vente</li>
-          <li><a href="#"></a>Livraison</li>
-          <li><a href="#"></a>FAQ</li>
-          <li><a href="#"></a>Qui sommes-nous</li>
+        <ul class="footer__liste">
+          <li>
+            <i class="fas fa-camera-retro"></i><a href="#">Mentions légales</a>
+          </li>
+          <li>
+            <i class="fas fa-camera-retro"></i
+            ><a href="mailto:orinoco@mail.com">Contact</a>
+          </li>
+          <li>
+            <i class="fas fa-camera-retro"></i
+            ><a href="#">Conditions générales de vente</a>
+          </li>
+          <li><i class="fas fa-camera-retro"></i><a href="#">FAQ</a></li>
         </ul>
+      </div>
+      <div class="footer__social">
+        <div>
+          <i class="fab fa-facebook-f"></i>
+          <a href="https://www.facebook.com/" title="Facebook"></a>
+        </div>
+        <div>
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/" title="Instagram"></a>
+        </div>
+        <div>
+          <i class="fab fa-twitter"></i>
+          <a href="https://twitter.com/" title="Twitter"></a>
+        </div>
       </div>
     </footer>
   </body>

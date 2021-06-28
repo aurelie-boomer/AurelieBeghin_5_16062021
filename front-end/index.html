@@ -32,23 +32,20 @@
   <body>
     <header class="header">
       <div class="header__bloc">
-        <img
-          class="header__logo"
-          src="./logo-orinoco.png"
-          alt="Logo du site Orinoco"
-        />
+        <p class="header__titre">OriCam</p>
       </div>
       <nav class="nav">
-        <div class="nav__lien"><a href="index.html">Accueil</a></div>
-        <div>
-          <a href="panier.html"><i class="fas fa-shopping-basket"></i></a>
+        <div class="nav__panier">
+          <a href="panier.html"
+            ><i class="fas fa-shopping-basket nav__logo"></i
+          ></a>
         </div>
       </nav>
     </header>
     <!--*******************************************************-->
     <main id="camerasList">
       <h1 class="main__titre">Nos appareils photo vintages</h1>
-      <section class="main__section">
+      <section>
         <template id="cameraTemplate">
           <article class="main__article">
             <a href="camera.html">
