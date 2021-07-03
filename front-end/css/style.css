@@ -69,6 +69,10 @@ h2 {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+.main__grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
 .main__article {
   background-color: white;
   border-radius: 0.5rem;

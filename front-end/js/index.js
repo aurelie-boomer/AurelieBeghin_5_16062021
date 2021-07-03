@@ -16,6 +16,10 @@ fetch("http://localhost:3000/api/cameras")
 
             clonedTemplate.getElementById("cameraPrice").textContent =
                 camera.price / 100 + "€";
+            
+            clonedTemplate.getElementById("cameraLink").href +=
+                "?cameraId=" + camera._id;
+
 
             document.getElementById("camerasList").appendChild(clonedTemplate);
         }

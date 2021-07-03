@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="INDEX,FOLLOW" />
-    <meta name="description" content="OriCam est un site de vente d'appareils
-    photo vintage professionnels avec des tailles de lentilles au choix"" />
+    <meta
+      name="description"
+      content="OriCam est un site de vente d'appareils
+    photo vintage professionnels avec des tailles de lentilles au choix"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/camera.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="favicon.jpg" />
@@ -30,10 +33,9 @@
   <body>
     <header class="header">
       <div class="header__bloc">
-        <p class="header__titre">OriCam</p>
+        <a href="index.html"> <p class="header__titre">OriCam</p></a>
       </div>
       <nav class="nav">
-        <div class="nav__retour"><a href="index.html">Accueil</a></div>
         <div class="nav__panier">
           <a href="panier.html"
             ><i class="fas fa-shopping-basket nav__logo"></i
@@ -41,6 +43,7 @@
         </div>
       </nav>
     </header>
+    <!--*******************************************************-->
     <main>
       <article class="main__article">
         <img id="cameraImg" src="" alt="" />
@@ -50,9 +53,16 @@
             <span class="article__prix" id="cameraPrice"></span>
           </div>
           <p class="article__description" id="cameraDescription"></p>
+          <select id="cameraLenses">
+            <option>--- Choisissez une lentille ---</option>
+            <option value="35mm 1.4">35mm 1.4</option>
+            <option value="50mm 1.6">50mm 1.6</option>
+          </select>
         </div>
+        <input class="btn__commander" type="button" value="COMMANDER" />
       </article>
     </main>
+    <!--*******************************************************-->
     <footer class="footer">
       <div>
         <ul class="footer__liste">
