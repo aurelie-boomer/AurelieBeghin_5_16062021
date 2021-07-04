@@ -45,6 +45,7 @@
     </header>
     <!--*******************************************************-->
     <main>
+      <h1 class="main__titre">Nos appareils photo vintages</h1>
       <article class="main__article">
         <img id="cameraImg" src="" alt="" />
         <div class="article__camera">
@@ -53,13 +54,14 @@
             <span class="article__prix" id="cameraPrice"></span>
           </div>
           <p class="article__description" id="cameraDescription"></p>
-          <select id="cameraLenses">
-            <option>--- Choisissez une lentille ---</option>
-            <option value="35mm 1.4">35mm 1.4</option>
-            <option value="50mm 1.6">50mm 1.6</option>
+          <select class="select" id="cameraLenses">
+            <option>--- Choisissez votre lentille ---</option>
+            <option value="laLentille">laLentille</option>
           </select>
         </div>
-        <input class="btn__commander" type="button" value="COMMANDER" />
+        <div class="btn">
+          <input class="btn__commander" type="button" value="COMMANDER" />
+        </div>
       </article>
     </main>
     <!--*******************************************************-->
@@ -82,16 +84,19 @@
       </div>
       <div class="footer__social">
         <div>
-          <i class="fab fa-facebook-f"></i>
-          <a href="https://www.facebook.com/" title="Facebook"></a>
+          <a href="https://www.facebook.com/" title="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
         </div>
         <div>
-          <i class="fab fa-instagram"></i>
-          <a href="https://www.instagram.com/" title="Instagram"></a>
+          <a href="https://www.instagram.com/" title="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
         <div>
-          <i class="fab fa-twitter"></i>
-          <a href="https://twitter.com/" title="Twitter"></a>
+          <a href="https://twitter.com/" title="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
         </div>
       </div>
     </footer>

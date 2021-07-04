@@ -69,16 +69,13 @@ h2 {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.main__grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-}
 .main__article {
   background-color: white;
   border-radius: 0.5rem;
   margin: 0 1rem 2rem;
   padding: 1.5rem;
 }
+
 #cameraImg {
   width: 100%;
 }
@@ -86,11 +83,7 @@ h2 {
   display: flex;
   justify-content: center;
 }
-.main__image {
-  width: 90%;
-  border-radius: 0.5rem;
-  padding-top: 1rem;
-}
+
 .article__camera {
   display: flex;
   flex-direction: column;
@@ -118,6 +111,26 @@ h2 {
   color: black;
   font-family: "neucha";
   text-align: justify;
+}
+.select {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border: 0.1rem solid #b14a0c;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.btn__commander {
+  background-color: #b14a0c;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  transition: all 1s ease;
+}
+.btn__commander:hover {
+  transform: scale(1.15);
 }
 
 .footer {
@@ -152,10 +165,20 @@ h2 {
 }
 
 @media screen and (min-width: 660px) {
+  .main__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   .header__bloc {
     font-size: 2rem;
+  }
+  .main__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
   }
   .footer__social {
     flex-direction: row;

@@ -44,23 +44,21 @@
     </header>
     <!--*******************************************************-->
     <main>
-      <section id="camerasList">
+      <section class="main__grid" id="camerasList">
         <h1 class="main__titre">Nos appareils photo vintages</h1>
         <template id="cameraTemplate">
-          <div class="main__grid">
-            <article class="main__article">
-              <a id="cameraLink" href="camera.html">
-                <img id="cameraImg" src="" alt="" />
-                <div class="article__camera">
-                  <div class="article__header">
-                    <h2 id="cameraName"></h2>
-                    <span class="article__prix" id="cameraPrice"></span>
-                  </div>
-                  <p class="article__description" id="cameraDescription"></p>
+          <article class="main__article">
+            <a id="cameraLink" href="camera.html">
+              <img id="cameraImg" src="" alt="" />
+              <div class="article__camera">
+                <div class="article__header">
+                  <h2 id="cameraName"></h2>
+                  <span class="article__prix" id="cameraPrice"></span>
                 </div>
-              </a>
-            </article>
-          </div>
+                <p class="article__description" id="cameraDescription"></p>
+              </div>
+            </a>
+          </article>
         </template>
       </section>
     </main>
@@ -84,16 +82,19 @@
       </div>
       <div class="footer__social">
         <div>
-          <i class="fab fa-facebook-f"></i>
-          <a href="https://www.facebook.com/" title="Facebook"></a>
+          <a href="https://www.facebook.com/" title="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
         </div>
         <div>
-          <i class="fab fa-instagram"></i>
-          <a href="https://www.instagram.com/" title="Instagram"></a>
+          <a href="https://www.instagram.com/" title="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
         <div>
-          <i class="fab fa-twitter"></i>
-          <a href="https://twitter.com/" title="Twitter"></a>
+          <a href="https://twitter.com/" title="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
         </div>
       </div>
     </footer>
