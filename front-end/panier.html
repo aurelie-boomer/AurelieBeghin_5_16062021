@@ -5,20 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="INDEX,FOLLOW" />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="OriCam est un site de vente d'appareils photo vintage professionnels avec des tailles de lentilles au choix"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="" />
+    <script src="./js/index.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="favicon.jpg" />
     <script
       src="https://kit.fontawesome.com/a60aae1ab2.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/panier.js" defer></script>
 
-    <title>Votre panier</title>
+    <title>Bienvenue chez OriCam</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="header">
+      <div class="header__bloc">
+        <a href="index.html"> <p class="header__titre">OriCam</p></a>
+      </div>
+      <nav class="nav">
+        <div class="nav__panier">
+          <a href="index.html"><i class="fas fa-home nav__logo"></i></a>
+        </div>
+      </nav>
+    </header>
+    <!--********************************************************-->
+
+    <main>
+      <h1 class="main__titre">Vérification et validation de votre commande</h1>
+      <h2>Votre panier</h2>
+      <h2>Vos coordonnées</h2>
+      <form action="" method="get" class="form">
+        <div class="form__label">
+          <label for="name">Entrez votre nom: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form__label">
+          <label for="first-name">Entrez votre prénom: </label>
+          <input type="text" name="first-name" id="first-name" required />
+        </div>
+        <div class="form__label">
+          <label for="adress">Entrez votre adresse: </label>
+          <input type="text" name="adress" id="adress" required />
+        </div>
+        <div class="form__label">
+          <label for="cp">Entrez votre code postal: </label>
+          <input type="text" name="cp" id="cp" required />
+        </div>
+        <div class="form__label">
+          <label for="country">Entrez votre ville: </label>
+          <input type="text" name="country" id="country" required />
+        </div>
+        <div class="form__label">
+          <label for="phone">Entrez votre numéro de téléphone: </label>
+          <input type="text" name="phone" id="phone" required />
+        </div>
+        <div class="form__label">
+          <label for="email">Entrez votre email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="btn">
+          <input
+            class="btn__commander"
+            type="button"
+            value="Valider la commande"
+          />
+        </div>
+      </form>
+    </main>
+    <!--********************************************************-->
+    <footer class="footer">
+      <div>
+        <ul class="footer__liste">
+          <li>
+            <i class="fas fa-camera-retro"></i><a href="#">Mentions légales</a>
+          </li>
+          <li>
+            <i class="fas fa-camera-retro"></i
+            ><a href="mailto:orinoco@mail.com">Contact</a>
+          </li>
+          <li>
+            <i class="fas fa-camera-retro"></i
+            ><a href="#">Conditions générales de vente</a>
+          </li>
+          <li><i class="fas fa-camera-retro"></i><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <div>
+          <a href="https://www.facebook.com/" title="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/" title="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://twitter.com/" title="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -46,23 +46,25 @@
     <!--*******************************************************-->
     <main>
       <h1 class="main__titre">Nos appareils photo vintages</h1>
-      <article class="main__article">
-        <img id="cameraImg" src="" alt="" />
-        <div class="article__camera">
-          <div class="article__header">
-            <h2 id="cameraName"></h2>
-            <span class="article__prix" id="cameraPrice"></span>
+      <div class="main">
+        <article class="main__article">
+          <img id="cameraImg" src="" alt="" />
+          <div class="article__camera">
+            <div class="article__header">
+              <h2 id="cameraName"></h2>
+              <span class="article__prix" id="cameraPrice"></span>
+            </div>
+            <p class="article__description" id="cameraDescription"></p>
+            <select class="select" id="cameraLenses">
+              <option>--- Choisissez votre lentille ---</option>
+              <option value="laLentille">laLentille</option>
+            </select>
           </div>
-          <p class="article__description" id="cameraDescription"></p>
-          <select class="select" id="cameraLenses">
-            <option>--- Choisissez votre lentille ---</option>
-            <option value="laLentille">laLentille</option>
-          </select>
-        </div>
-        <div class="btn">
-          <input class="btn__commander" type="button" value="COMMANDER" />
-        </div>
-      </article>
+          <div class="btn">
+            <input class="btn__commander" type="button" value="COMMANDER" />
+          </div>
+        </article>
+      </div>
     </main>
     <!--*******************************************************-->
     <footer class="footer">
