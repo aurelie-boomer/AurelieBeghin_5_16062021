@@ -7,61 +7,61 @@ console.log(cameraId);
 
 //récupération des informations du produit concerné grâce à l'API fetch
 fetch("http://localhost:3000/api/cameras/" + cameraId)
-    .then((resultat) => {
-        return resultat.json();
-    })
-    .then((camera) => {
-        console.log(camera);
-        document.getElementById("cameraName").textContent = camera.name;
-        document.getElementById("cameraImg").src = camera.imageUrl;
-        document.getElementById("cameraPrice").textContent =
-        camera.price / 100 + "€";
-        document.getElementById("cameraDescription").innerHTML =
-            "<ul><li>" + camera.description + "</li></ul>";
-        //document.getElementById("cameraLenses").textContent = camera.lenses;
+  .then((resultat) => {
+    return resultat.json();
+  })
+  .then((camera) => {
+    console.log(camera);
+    document.getElementById("cameraName").textContent = camera.name;
+    document.getElementById("cameraImg").src = camera.imageUrl;
+    document.getElementById("cameraPrice").textContent =
+      camera.price / 100 + "€";
+    document.getElementById("cameraDescription").textContent =
+      camera.description;
 
+    /**********************************************************************************************/
+    // pour chaque lentille : ajouter un <option  qui contient la lentille au select
+    // grâce au .innerHTML qui permet d'injecter du code HTML depuis le javascript
 
-/**********************************************************************************************/
-// parcourir les lentilles (camera.lenses)   TABLEAU??
-           /* for (const lenses of camera.keys(camera)) {
-                console.log(lenses);
-                var selectElmt = document.getElementById("cameraLenses");
-                var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
-                var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
-            }
-
-            addLenses
-            //template??
-
- // pour chaque lentille : ajouter un <option value="laLentille">laLentille</option> qui contient la lentille au select
-// grâce au .innerHTML qui permet d'injecter du code HTML depuis le javascript
-            const option = document.createElement("option");
-
-            document.getElementById("select").appendChild(option);
-
-            const newElt = document.createElement("option");
-            const elt = document.getElementById("select");
-
-            elt.appendChild(newElt);
-
-        
-        // document.getElementById("cameraLenses");
-        //Fonction pour le tableau lenses
-           const lenseList = () => {
-        for (let i = 0; i < camera.lenses.length; i++) {
-        const option = document.createElement("option") //Créé notre liste option
-        option.setAttribute("value", camera.lenses[i]) //Incrémente nos lenses à notre liste option               
-        option.innerHTML = camera.lenses[i]
-        lenses.appendChild(option)
+    for (const lens of camera.lenses) {
+      document.getElementById("cameraLenses").innerHTML +=
+        "<option>" + lens + "</option>";
     }
-}
 
-        // puis dans le javascript, écouter son évènement "click"
-       /*const lense = document.getElementById("laLentille");
-       addlense.addEventListener("click",function(){
-           console log("addlense", i);
+    // puis dans le javascript, écouter son évènement "click"
+    document.getElementById("orderBtn").addEventListener("click", function () {
+      const selectedLens = document.getElementById("cameraLenses").value;
+      // et au clic, ajouter au localStorage
+      localStorage.setItem("cart", {
+          id: camera._id, lens: selectedLens
+      });
 
-       });*/
-
-        // et au clic, ajouter au localStorage
     });
+
+  });
+ /************************************Le local storage **********************************************************/
+  /**************************************Stocker un objet dans le local storage********************************************************/
+  //fonction fenetre pop up
+  const popUpConfirmation = () =>{
+    
+  }
+// s'il y a dejà des produits enregistrés dans le local storage
+if(selectedLens){
+  selectedLens.push();
+  localStorage.setItem("cart", JSON.stringify( {
+    id: camera._id, lens: selectedLens
+  }));
+  console.log(selectedLens);
+  popUpConfirmation();
+}
+ //s'il n y a pas de produit enregistré dans le local storage
+ else{
+  selectedLens = [];
+  selectedLens.push();
+  localStorage.setItem("cart", JSON.stringify( {
+    id: camera._id, lens: selectedLens
+  }));
+  console.log(selectedLens);
+  popUpConfirmation();
+ }
+ /*************************************Stocker la récupération des valeurs du formulaire*********************************************************/

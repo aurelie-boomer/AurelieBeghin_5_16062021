@@ -44,22 +44,24 @@
     </header>
     <!--*******************************************************-->
     <main>
-      <section class="main__grid" id="camerasList">
+      <section>
         <h1 class="main__titre">Nos appareils photo vintages</h1>
-        <template id="cameraTemplate">
-          <article class="main__article">
-            <a id="cameraLink" href="camera.html">
-              <img id="cameraImg" src="" alt="" />
-              <div class="article__camera">
-                <div class="article__header">
-                  <h2 id="cameraName"></h2>
-                  <span class="article__prix" id="cameraPrice"></span>
+        <div class="main__grid" id="camerasList">
+          <template id="cameraTemplate">
+            <article class="main__article">
+              <a id="cameraLink" href="camera.html">
+                <img id="cameraImg" src="" alt="" />
+                <div class="article__camera">
+                  <div class="article__header">
+                    <h2 id="cameraName"></h2>
+                    <span class="article__prix" id="cameraPrice"></span>
+                  </div>
+                  <p class="article__description" id="cameraDescription"></p>
                 </div>
-                <p class="article__description" id="cameraDescription"></p>
-              </div>
-            </a>
-          </article>
-        </template>
+              </a>
+            </article>
+          </template>
+        </div>
       </section>
     </main>
     <!--********************************************************-->

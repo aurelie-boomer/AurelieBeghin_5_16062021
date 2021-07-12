@@ -41,46 +41,94 @@
         </div>
       </nav>
     </header>
-    <!--********************************************************-->
+    <!-------------------------------Main------------------------------------------>
 
     <main>
-      <h1 class="main__titre">Vérification et validation de votre commande</h1>
-      <h2>Votre panier</h2>
-      <h2>Vos coordonnées</h2>
-      <form action="" method="get" class="form">
-        <div class="form__label">
-          <label for="name">Entrez votre nom: </label>
-          <input type="text" name="name" id="name" required />
+      <h1 class="main__titre">Votre panier</h1>
+      <!-------------------------------Panier------------------------------------------>
+      <h2 class="titre__commande">Produit(s) ajouté(s)</h2>
+      <div class="basket">
+        <div class="basket__produit">
+          <img id="cameraImg" src="" alt="" />
+          <div id="cameraName">nom caméra</div>
+          <div id="cameraLens">lentilles</div>
+          <div id="cameraPrice">prix</div>
+          <div>Quantité</div>
+          <div>Prix total:</div>
         </div>
-        <div class="form__label">
-          <label for="first-name">Entrez votre prénom: </label>
-          <input type="text" name="first-name" id="first-name" required />
-        </div>
-        <div class="form__label">
-          <label for="adress">Entrez votre adresse: </label>
-          <input type="text" name="adress" id="adress" required />
-        </div>
-        <div class="form__label">
-          <label for="cp">Entrez votre code postal: </label>
-          <input type="text" name="cp" id="cp" required />
-        </div>
-        <div class="form__label">
-          <label for="country">Entrez votre ville: </label>
-          <input type="text" name="country" id="country" required />
-        </div>
-        <div class="form__label">
-          <label for="phone">Entrez votre numéro de téléphone: </label>
-          <input type="text" name="phone" id="phone" required />
-        </div>
-        <div class="form__label">
-          <label for="email">Entrez votre email: </label>
-          <input type="email" name="email" id="email" required />
-        </div>
+
         <div class="btn">
           <input
             class="btn__commander"
             type="button"
-            value="Valider la commande"
+            value="Annuler la commande"
+          />
+        </div>
+      </div>
+      <!-----------------------------Formulaire contact--------------------------------------->
+      <h2 class="titre__commande">Formulaire de contact</h2>
+      <form action="" method="get" class="form" id="form">
+        <div class="form__contact">
+          <div class="form__label">
+            <label for="lastName">Entrez votre nom: </label>
+            <input
+              class="form__input"
+              type="text"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+          <div class="form__label">
+            <label for="first-name">Entrez votre prénom: </label>
+            <input
+              class="form__input"
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+            />
+          </div>
+          <div class="form__label">
+            <label for="email">Entrez votre email: </label>
+            <input
+              class="form__input"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form__label">
+          <label for="adress">Entrez votre adresse: </label>
+          <input
+            class="form__input"
+            type="text"
+            name="adress"
+            id="adress"
+            required
+          />
+        </div>
+          <div class="form__label">
+            <label for="city">Entrez votre ville: </label>
+            <input
+              class="form__input"
+              type="text"
+              name="country"
+              id="country"
+              required
+            />
+          </div>
+        </div>
+
+        <!-----------------------------Bouton--------------------------------------->
+        <div class="btn">
+          <input
+            class="btn__commander"
+            type="sumit"
+            value="Valider"
           />
         </div>
       </form>
