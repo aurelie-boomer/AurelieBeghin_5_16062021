@@ -15,8 +15,8 @@ fetch("http://localhost:3000/api/cameras/" + cameraId)
   });
 
 //Convertir les données (format JSON) qui sont dans le local storage en objet javascript
-const selectedLens = JSON.parse(localStorage.getItem("cart"));
-console.log(selectedLens);
+const cart = JSON.parse(localStorage.getItem("cart"));
+console.log(cart);
 
 
 

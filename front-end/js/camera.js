@@ -39,12 +39,27 @@ fetch("http://localhost:3000/api/cameras/" + cameraId)
     });
 
   });
- /************************************Le local storage **********************************************************/
-  /**************************************Stocker un objet dans le local storage********************************************************/
-  //fonction fenetre pop up
-  const popUpConfirmation = () =>{
-    
-  }
+
+
+
+ /*/************************************Le local storage *********************************************************/
+ // Vérifier qu'une lentille a été sélectionnée
+ if (localStorage.selectedLens != null){
+   const selectedLens = localStorage.getItem("selectedLens");
+ }else{
+   const selectedLens = alert ("Veuillez sélectionner une lentille");
+   localStorage.getItem("selectedLens");
+ }
+
+  /**************************************Stocker un objet dans le local storage*******************************************************/
+
+  // déclarer un tableau
+const cart = [];
+cart[0] =
+localStorage.setItem("cart", JSON.stringify(cart));
+
+// Ajouter une caméra au tableau
+cart.push({id:camera_id, lens: selectedLens})
 // s'il y a dejà des produits enregistrés dans le local storage
 if(selectedLens){
   selectedLens.push();
@@ -64,4 +79,6 @@ if(selectedLens){
   console.log(selectedLens);
   popUpConfirmation();
  }
- /*************************************Stocker la récupération des valeurs du formulaire*********************************************************/
+ /*************************************Stocker la récupération des valeurs du formulaire********************************************************/
+//Mettre le nouveau tablau dans le local storage pour écraser l'ancien
+localStorage.setItem("cart", JSON.stringify(cart))
