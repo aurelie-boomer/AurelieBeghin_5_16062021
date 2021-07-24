@@ -21,23 +21,15 @@ console.log(cart);
 
 
 
-
-
-
 //************** Validation formulaire: regex ou patter??********************
 function valider (event) {
+  document.getElementById("errorMessage").style.display = "block";
     // code a exécuter lorsque le formulaire sera validé
 }
 
-/* ajoute l’événement */
-form_contact.addEventListener('submit', valider);
-
-//récupération du formulaire
-const form_contact = document.getElementById("form");
-
 const champ_lastName = form_contact.elements["lastName"];
 const champ_firstName = form_contact.elements["firstName"];
-const champ_adress = form_contact.elements["adress"];
+const champ_address = form_contact.elements["address"];
 const champ_email = form_contact.elements["email"];
 const champ_city = form_contact.elements["city"];
 
@@ -60,4 +52,9 @@ if (regex.exec(champ_email.value) == null) {
 if(!form_OK){
     event.preventDefault();
 }
+//récupération du formulaire
+const formContact = document.getElementById("form");
+
+/* ajoute l’événement */
+formContact.addEventListener("submit", valider);
 

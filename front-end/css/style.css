@@ -155,6 +155,10 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+.form__error {
+  color: red;
+  display: none;
+}
 .form__input {
   border-radius: 2rem;
   padding: 0.3rem;

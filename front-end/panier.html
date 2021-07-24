@@ -10,7 +10,6 @@
       content="OriCam est un site de vente d'appareils photo vintage professionnels avec des tailles de lentilles au choix"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/index.js" defer></script>
     <link rel="shortcut icon" type="image/png" href="favicon.jpg" />
     <script
       src="https://kit.fontawesome.com/a60aae1ab2.js"
@@ -49,10 +48,14 @@
       <h2 class="titre__commande">Produit(s) ajouté(s)</h2>
       <div class="basket">
         <div class="basket__produit">
-          <img id="cameraImg" src="" alt="" />
-          <div id="cameraName">nom caméra</div>
-          <div id="cameraLens">lentilles</div>
-          <div id="cameraPrice">prix</div>
+          <div id="cameraList" >
+            <template id="cameraTemplate">
+              <img id="cameraImg" src="" alt="" />
+              <div id="cameraName">nom caméra</div>
+              <div id="cameraLens">lentilles</div>
+              <div id="cameraPrice">prix</div>
+          </template>
+          </div>
           <div>Quantité</div>
           <div>Prix total:</div>
         </div>
@@ -91,6 +94,7 @@
           </div>
           <div class="form__label">
             <label for="email">Entrez votre email: </label>
+            <p id="errorMessage" class="form__error">Email invalide</p>
             <input
               class="form__input"
               type="email"
@@ -102,12 +106,12 @@
         </div>
 
         <div class="form__label">
-          <label for="adress">Entrez votre adresse: </label>
+          <label for="address">Entrez votre adresse: </label>
           <input
             class="form__input"
             type="text"
-            name="adress"
-            id="adress"
+            name="address"
+            id="address"
             required
           />
         </div>
@@ -116,8 +120,8 @@
             <input
               class="form__input"
               type="text"
-              name="country"
-              id="country"
+              name="city"
+              id="city"
               required
             />
           </div>
