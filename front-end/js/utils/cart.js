@@ -10,7 +10,7 @@ export function getCart() {
  export function addToCart(item){
     const cart = getCart();  //pour récupérer le panier
     cart.push(item);
-    cartJson = JSON.stringify(cart);
+    const cartJson = JSON.stringify(cart);
     localStorage.setItem("cart", cartJson);
 
 }

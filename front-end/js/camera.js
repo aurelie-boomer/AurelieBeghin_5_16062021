@@ -1,4 +1,4 @@
-import { addToCart } from "./utils/cart";
+import { addToCart } from "./utils/cart.js";
 
 main();
 function main() {

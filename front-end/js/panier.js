@@ -1,4 +1,4 @@
-import { getCart } from "./utils/cart";
+import { getCart } from "./utils/cart.js";
 main(); //récupérer le panier
 function main() {
   //Convertir les données (format JSON) qui sont dans le local storage en objet javascript
@@ -20,19 +20,17 @@ function fillCartInformation(cart) {
   }
 }
 // additionner les prix des caméras ensemble
-function fillTotalPrice(){
-  let totalPrice;
-    const cart = getCart();
+async function fillTotalPrice() {
+  let totalPrice = 0;
+  const cart = getCart();
   for (const selectedCamera of cart) {
-    fetch("http://localhost:3000/api/cameras/" + selectedCamera.id)
-      .then((resultat) => {
-        return resultat.json();
-      })
-      .then((camera) => {
-        totalPrice += camera.price;
-      });
+    const reponse = await fetch(
+      "http://localhost:3000/api/cameras/" + selectedCamera.id
+    );
+    const camera = await reponse.json();
+    totalPrice += camera.price;
   }
-console.log(totalPrice);
+  document.getElementById("totalPrice").textContent = totalPrice / 100 + "€";
 }
 
 function addCameraToCamerasList(selectedCamera, camera) {
