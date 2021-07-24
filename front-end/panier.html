@@ -25,7 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
       rel="stylesheet"
     />
-    <script src="./js/panier.js" defer></script>
+    <script src="./js/panier.js" type="module" defer></script>
 
     <title>Bienvenue chez OriCam</title>
   </head>
@@ -48,16 +48,15 @@
       <h2 class="titre__commande">Produit(s) ajouté(s)</h2>
       <div class="basket">
         <div class="basket__produit">
-          <div id="cameraList" >
+          <div id="camerasList" >
             <template id="cameraTemplate">
               <img id="cameraImg" src="" alt="" />
               <div id="cameraName">nom caméra</div>
               <div id="cameraLens">lentilles</div>
               <div id="cameraPrice">prix</div>
           </template>
-          </div>
-          <div>Quantité</div>
-          <div>Prix total:</div>
+          </div>         
+          <div>Prix total: <span id="totalPrice"></span></div>
         </div>
 
         <div class="btn">
