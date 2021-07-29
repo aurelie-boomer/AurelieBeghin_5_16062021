@@ -48,12 +48,15 @@
       <h2 class="titre__commande">Produit(s) ajouté(s)</h2>
       <div class="basket">
         <div class="basket__produit">
-          <div id="camerasList" >
+          <div id="camerasList">
             <template id="cameraTemplate">
+              <div class="basket__list">
               <img id="cameraImg" src="" alt="" />
               <div id="cameraName">nom caméra</div>
               <div id="cameraLens">lentilles</div>
               <div id="cameraPrice">prix</div>
+              <div id="btnDelete"><button>Supprimer</button></div>
+              </div>
           </template>
           </div>         
           <div>Prix total: <span id="totalPrice"></span></div>
@@ -69,7 +72,7 @@
       </div>
       <!-----------------------------Formulaire contact--------------------------------------->
       <h2 class="titre__commande">Formulaire de contact</h2>
-      <form action="" method="get" class="form" id="form">
+      <form action="" method="get" class="form" id="formContact">
         <div class="form__contact">
           <div class="form__label">
             <label for="lastName">Entrez votre nom: </label>
@@ -77,9 +80,10 @@
               class="form__input"
               type="text"
               name="name"
-              id="name"
-              required
+              id="last-name"
+              required minlength="3"
             />
+            <span id="error"></span>
           </div>
           <div class="form__label">
             <label for="first-name">Entrez votre prénom: </label>
@@ -88,7 +92,7 @@
               type="text"
               name="first-name"
               id="first-name"
-              required
+              required minlength="3"
             />
           </div>
           <div class="form__label">

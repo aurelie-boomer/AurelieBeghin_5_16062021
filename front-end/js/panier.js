@@ -49,6 +49,27 @@ function addCameraToCamerasList(selectedCamera, camera) {
 }
 
 //************** Validation formulaire: regex ou patter??********************
+
+//récupération du formulaire
+const formContact = document.getElementById("formContact");
+
+// vérification des champs avant envoi
+formContact.addEventListener("submit", function (e) {
+  const champLastName = document.getElementById("lastName");
+  const myRegex = /^[a-zA-Z-\s]{3,20}+$/;
+  if (champLastName.value == "") {
+    const error = document.getElementById("error");
+    error.innerHTML = "Le champ est vide";
+    error.style.color = "red";
+    e.preventDefault();
+  } else if (myRegex.test(champLastName.value) == false) {
+    const error = document.getElementById("error");
+    error.innerHTML = "Le champ n'est pas valide";
+    error.style.color = "red";
+    e.preventDefault();
+  }
+});
+
 function valider(event) {
   document.getElementById("errorMessage").style.display = "block";
   // code a exécuter lorsque le formulaire sera validé
@@ -57,31 +78,34 @@ function valider(event) {
   const champAddress = formContact.elements["address"];
   const champEmail = formContact.elements["email"];
   const champCity = formContact.elements["city"];
-
-  //*********** Test de la conformité des champs ****************
-
-  // le formulaire est-il OK?
-  var formOk = true;
-
-  // si le champ ne contient pas 5 caractères OU
-  // si il n'est pas composé que de nombres
-  if (champCity.value.length != 5 || isNaN(champCity.value)) {
-    formOk = false;
-  }
-  var regex =
-    /^[a-z0-9]+([_|\.|-]{1}[a-z0-9]+)*@[a-z0-9]+([_|\.|-]­{1}[a-z0-9]+)*[\.]{1}[a-z]{2,6}$/;
-  if (regex.exec(champEmail.value) == null) {
-    formOk = false;
-  }
-
-  // Au final, on empeche l'envoi du formulaire si form_OK est faux
-  if (!formOk) {
-    event.preventDefault();
-  }
 }
 
-//récupération du formulaire
-const formContact = document.getElementById("form");
+// autorisation d envoi si formulaire est ok
+//function
 
-/* ajoute l’événement */
-formContact.addEventListener("submit", valider);
+// modification message dans le pop up (mettre un id à l input ciblé!)
+/*const inputTextError = document.getElementById("inputTextError");
+inputTextError.setCustomValidity("Mon message à afficher");*/
+
+//************** Bouton pour supprimer un produit du panier et l enlever du localstorage ********************
+/*il faut
+récuperer le contenu du panier, (une variable qui stocke tout le panier dans le localstorage), 
+parcourir le tableau obtenu (tableau d'objet), trouver l'article (en utilisant son code + options) 
+l'enlever, 
+restocker le panier à partir de la nouvelle version du panier (version sans l'article supprimé)
+
+const btnDelete = document.getElementById("btnDelete");
+for (){
+  btnDelete.addEventListener("click", function())
+  e.preventDefault();
+  //Sélectionner la bonne caméra grâce à son id
+  filter??
+  const ? = document.getElementById
+  
+}
+
+localStorage.removeItem("");
+
+//************** Bouton pour vider entièrement le panier ********************
+
+localStorage.clear();*/
