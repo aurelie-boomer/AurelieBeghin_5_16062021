@@ -11,7 +11,7 @@
     photo vintage professionnels avec des tailles de lentilles au choix"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/camera.js" type="module" defer></script>
+    <script src="./js/confirmation.js" type="module" defer></script>
     <link rel="shortcut icon" type="image/png" href="favicon.jpg" />
     <script
       src="https://kit.fontawesome.com/a60aae1ab2.js"
@@ -27,8 +27,7 @@
       href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
       rel="stylesheet"
     />
-
-    <title>Nos appareils photo vintages</title>
+    <title>Confirmation de la commande</title>
   </head>
   <body>
     <header class="header">
@@ -37,40 +36,24 @@
       </div>
       <nav class="nav">
         <div class="nav__panier">
-          <a href="panier.html"
-            ><i class="fas fa-shopping-basket nav__logo"></i
-          ></a>
+          <a href="index.html"><i class="fas fa-home nav__logo"></i></a>
         </div>
       </nav>
     </header>
-    <!--*******************************************************-->
     <main>
-      <h1 class="main__titre">Nos appareils photo vintages</h1>
-      <div class="main">
-        <article class="main__article">
-          <img id="cameraImg" src="" alt="" />
-          <div class="article__camera">
-            <div class="article__header">
-              <h2 id="cameraName"></h2>
-              <span class="article__prix" id="cameraPrice"></span>
-            </div>
-            <p class="article__description" id="cameraDescription"></p>
-            <select class="select" id="cameraLenses">
-              <option value="">--- Choisissez votre lentille ---</option>
-            </select>
-          </div>
-          <div class="btn">
-            <input
-              id="orderBtn"
-              class="btn__commander"
-              type="button"
-              value="COMMANDER"
-            />
-          </div>
-        </article>
+      <div class="order">
+        <span id="name">Chèr(e)</span>
+        <span id="title" class="order__title">
+          Votre commande a bien été prise en compte!</span
+        >
+        <span>Pour un montant total de</span>
+        <span id="totalPrice">€</span>
+        <span id="numberOrder"
+          >Veuillez conserver l'identifiant de votre commande:</span
+        >
       </div>
     </main>
-    <!--*******************************************************-->
+    <!--********************************************************-->
     <footer class="footer">
       <div>
         <ul class="footer__liste">

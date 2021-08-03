@@ -192,6 +192,9 @@ input:valid {
 .btn__commander:hover {
   transform: scale(1.15);
 }
+.btn__deleteBasket {
+  margin-top: 1rem;
+}
 .footer {
   background-color: #b14a0c;
   width: 100%;
@@ -221,6 +224,14 @@ input:valid {
 .fas,
 .fab {
   margin-bottom: 1rem;
+}
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order__title {
+  text-align: center;
 }
 
 @media screen and (min-width: 660px) {

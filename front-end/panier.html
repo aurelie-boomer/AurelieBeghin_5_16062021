@@ -50,24 +50,19 @@
         <div class="basket__produit">
           <div id="camerasList">
             <template id="cameraTemplate">
-              <div class="basket__list">
-              <img id="cameraImg" src="" alt="" />
-              <div id="cameraName">nom caméra</div>
-              <div id="cameraLens">lentilles</div>
-              <div id="cameraPrice">prix</div>
-              <div id="btnDelete"><button>Supprimer</button></div>
+              <div id="cameraContainer" class="basket__list">
+                <img id="cameraImg" src="" alt="" />
+                <div id="cameraName">nom caméra</div>
+                <div id="cameraLens">lentilles</div>
+                <div id="cameraPrice">prix</div>
+                <div id="btnDelete"><button>Supprimer</button></div>
               </div>
-          </template>
-          </div>         
+            </template>
+          </div>
           <div>Prix total: <span id="totalPrice"></span></div>
-        </div>
-
-        <div class="btn">
-          <input
-            class="btn__commander"
-            type="button"
-            value="Annuler la commande"
-          />
+          <div id="btnDeleteBasket" class="btn__deleteBasket">
+            <input type="button" value="Vider le panier" />
+          </div>
         </div>
       </div>
       <!-----------------------------Formulaire contact--------------------------------------->
@@ -81,7 +76,8 @@
               type="text"
               name="name"
               id="last-name"
-              required minlength="3"
+              required
+              minlength="3"
             />
             <span id="error"></span>
           </div>
@@ -92,7 +88,8 @@
               type="text"
               name="first-name"
               id="first-name"
-              required minlength="3"
+              required
+              minlength="3"
             />
           </div>
           <div class="form__label">
@@ -118,25 +115,20 @@
             required
           />
         </div>
-          <div class="form__label">
-            <label for="city">Entrez votre ville: </label>
-            <input
-              class="form__input"
-              type="text"
-              name="city"
-              id="city"
-              required
-            />
-          </div>
+        <div class="form__label">
+          <label for="city">Entrez votre ville: </label>
+          <input
+            class="form__input"
+            type="text"
+            name="city"
+            id="city"
+            required
+          />
         </div>
 
         <!-----------------------------Bouton--------------------------------------->
         <div class="btn">
-          <input
-            class="btn__commander"
-            type="sumit"
-            value="Valider"
-          />
+          <input class="btn__commander" type="sumit" value="Valider" />
         </div>
       </form>
     </main>
