@@ -126,7 +126,7 @@ h2 {
 }
 .basket__produit {
   border: 3px solid #b14a0c;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
@@ -135,9 +135,24 @@ h2 {
 .basket__list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   align-items: center;
   justify-items: center;
+}
+.camera__img {
+  margin-right: 1rem;
+}
+.camera__name {
+  margin-right: 1rem;
+}
+.camera__lens {
+  margin-right: 1rem;
+}
+.camera__price {
+  margin-right: 1rem;
+}
+.camera__totalPrice {
+  margin-top: 2rem;
 }
 .titre__commande {
   margin-top: 2rem;
@@ -198,7 +213,7 @@ input:valid {
 .footer {
   background-color: #b14a0c;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -230,11 +245,11 @@ input:valid {
   flex-direction: column;
   align-items: center;
 }
-.order__title {
-  text-align: center;
+.order__text {
+  margin-top: 2rem;
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 710px) {
   .main__article {
     width: 72%;
     align-self: center;
@@ -245,6 +260,19 @@ input:valid {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0.5rem;
   }
+  .camera__img {
+    margin-right: 0rem;
+  }
+  .camera__name {
+    margin-right: 0rem;
+  }
+  .camera__lens {
+    margin-right: 0rem;
+  }
+  .camera__price {
+    margin-right: 0rem;
+  }
+
   .form__contact {
     display: flex;
     flex-direction: row;
@@ -258,7 +286,12 @@ input:valid {
   .main__grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  .order {
+    margin-top: 7rem;
+  }
+  .footer {
+    margin-top: 10rem;
+  }
   .footer__social {
     flex-direction: row;
     justify-content: space-evenly;

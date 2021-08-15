@@ -42,14 +42,17 @@
     </header>
     <main>
       <div class="order">
-        <span id="title" class="order__title">
-          Votre commande a bien été prise en compte!</span
-        >
-        <span>Pour un montant total de</span>
-        <span id="totalPrice">€</span>
-        <span id="numberOrder"
-          >Veuillez conserver l'identifiant de votre commande:</span
-        >
+        <p class="order__text">Chèr(e) <span id="name"></span>,</p>
+        <p class="order__text">Votre commande a bien été prise en compte!</p>
+
+        <p class="order__text">
+          Pour un montant total de <span id="totalPrice">€</span>
+        </p>
+
+        <p class="order__text">
+          Voici l'identifiant de votre commande: </br></br>
+          <span id="orderId"></span>
+        </p>
       </div>
     </main>
     <!--********************************************************-->

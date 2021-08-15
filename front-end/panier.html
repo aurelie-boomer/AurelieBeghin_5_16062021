@@ -51,15 +51,17 @@
           <div id="camerasList">
             <template id="cameraTemplate">
               <div id="cameraContainer" class="basket__list">
-                <img id="cameraImg" src="" alt="" />
-                <div id="cameraName">nom caméra</div>
-                <div id="cameraLens">lentilles</div>
-                <div id="cameraPrice">prix</div>
+                <img id="cameraImg" class="camera__img" src="" alt="" />
+                <div id="cameraName" class="camera__name">nom caméra</div>
+                <div id="cameraLens" class="camera__lens">lentilles</div>
+                <div id="cameraPrice" class="camera__price">prix</div>
                 <div id="btnDelete"><button>Supprimer</button></div>
               </div>
             </template>
           </div>
-          <div>Prix total: <span id="totalPrice"></span></div>
+          <div class="camera__totalPrice">
+            Prix total: <span id="totalPrice"></span>
+          </div>
           <div id="btnDeleteBasket" class="btn__deleteBasket">
             <input type="button" value="Vider le panier" />
           </div>
@@ -67,7 +69,7 @@
       </div>
       <!-----------------------------Formulaire contact--------------------------------------->
       <h2 class="titre__commande">Formulaire de contact</h2>
-      <form action="" method="get" class="form" id="formContact">
+      <form class="form" id="formContact">
         <div class="form__contact">
           <div class="form__label">
             <label for="lastName">Entrez votre nom: </label>
@@ -75,26 +77,27 @@
               class="form__input"
               type="text"
               name="name"
-              id="last-name"
+              id="lastName"
               required
               minlength="3"
             />
-            <span id="error"></span>
+            <span id="errorLastName"></span>
           </div>
           <div class="form__label">
-            <label for="first-name">Entrez votre prénom: </label>
+            <label for="firstName">Entrez votre prénom: </label>
             <input
               class="form__input"
               type="text"
               name="first-name"
-              id="first-name"
+              id="firstName"
               required
               minlength="3"
             />
+            <span id="errorFirstName"></span>
           </div>
           <div class="form__label">
             <label for="email">Entrez votre email: </label>
-            <p id="errorMessage" class="form__error">Email invalide</p>
+
             <input
               class="form__input"
               type="email"
@@ -102,6 +105,7 @@
               id="email"
               required
             />
+            <span id="errorEmail"></span>
           </div>
         </div>
 
@@ -114,6 +118,7 @@
             id="address"
             required
           />
+          <span id="errorAddress"></span>
         </div>
         <div class="form__label">
           <label for="city">Entrez votre ville: </label>
@@ -124,11 +129,17 @@
             id="city"
             required
           />
+          <span id="errorCity"></span>
         </div>
 
         <!-----------------------------Bouton--------------------------------------->
         <div class="btn">
-          <input class="btn__commander" type="sumit" value="Valider" />
+          <input
+            id="submitButton"
+            class="btn__commander"
+            type="submit"
+            value="Valider"
+          />
         </div>
       </form>
     </main>
