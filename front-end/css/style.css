@@ -248,6 +248,9 @@ input:valid {
 .order__text {
   margin-top: 2rem;
 }
+.order__font {
+  font-weight: bold;
+}
 
 @media screen and (min-width: 710px) {
   .main__article {

@@ -53,6 +53,41 @@ function addCameraToCamerasList(selectedCamera, camera) {
 
   document.getElementById("camerasList").appendChild(clonedTemplate);
 }
+//************** Bouton pour supprimer un produit du panier et l enlever du localstorage ********************
+
+function removeProductFromCart(product) {
+  const cart = getCart(); //récupérer le panier
+  let productIndex = -1;
+  for (let i = 0; i < cart.length; i++) {
+    const element = cart[i];
+    if (element.id === product.id && element.lens === product.lens) {
+      productIndex = i;
+      break;
+    }
+  }
+  if (productIndex === -1) {
+    return false;
+  }
+  //Supprimer l'élément du tableau
+  cart.splice(productIndex, 1);
+  //Enregistrer le nouveau panier
+  saveCart(cart);
+  return true;
+}
+
+//************** Bouton pour vider entièrement le panier ********************
+btnDeleteBasket.addEventListener("click", function (e) {
+  e.preventDefault;
+  localStorage.removeItem("cart");
+  alert("Le panier a été vidé ");
+  //Faire la suppression visuelle
+  const tableProducts = document.getElementById("camerasList");
+  tableProducts.innerHTML = "";
+  // Mettre le panier à Zéro après l'avoir vidé
+  const DeleteTotalPrice = document.getElementById("totalPrice");
+  DeleteTotalPrice.textContent = "0€";
+  // Supprimer le panier sans rafraîchir
+});
 
 //************** Validation formulaire ********************
 
@@ -194,39 +229,3 @@ function validateInput(id, errorId, regex, errorMessage) {
   error.innerHTML = "";
   return true;
 }
-
-//************** Bouton pour supprimer un produit du panier et l enlever du localstorage ********************
-
-function removeProductFromCart(product) {
-  const cart = getCart(); //récupérer le panier
-  let productIndex = -1;
-  for (let i = 0; i < cart.length; i++) {
-    const element = cart[i];
-    if (element.id === product.id && element.lens === product.lens) {
-      productIndex = i;
-      break;
-    }
-  }
-  if (productIndex === -1) {
-    return false;
-  }
-  //Supprimer l'élément du tableau
-  cart.splice(productIndex, 1);
-  //Enregistrer le nouveau panier
-  saveCart(cart);
-  return true;
-}
-
-//************** Bouton pour vider entièrement le panier ********************
-btnDeleteBasket.addEventListener("click", function (e) {
-  e.preventDefault;
-  localStorage.removeItem("cart");
-  alert("Le panier a été vidé ");
-  //Faire la suppression visuelle
-  const tableProducts = document.getElementById("camerasList");
-  tableProducts.innerHTML = "";
-  // Mettre le panier à Zéro après l'avoir vidé
-  const DeleteTotalPrice = document.getElementById("totalPrice");
-  DeleteTotalPrice.textContent = "0€";
-  // Supprimer le panier sans rafraîchir
-});
