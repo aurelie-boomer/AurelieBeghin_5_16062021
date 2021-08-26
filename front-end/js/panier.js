@@ -6,6 +6,8 @@ function main() {
   //Remplir la page avec les informations
   fillCartInformation(cart);
   fillTotalPrice();
+  //************** Bouton pour vider entièrement le panier ********************
+  setupEmptyBasketButton();
 }
 
 function fillCartInformation(cart) {
@@ -48,6 +50,7 @@ function addCameraToCamerasList(selectedCamera, camera) {
     .getElementById("btnDelete")
     .addEventListener("click", function (e) {
       if (!removeProductFromCart(selectedCamera)) return; //suppression du panier
+      fillTotalPrice();
       document.getElementById("camerasList").removeChild(cameraContainer); //supprime visuellement le produit sans raffraichir la page
     });
 
@@ -75,24 +78,8 @@ function removeProductFromCart(product) {
   return true;
 }
 
-//************** Bouton pour vider entièrement le panier ********************
-btnDeleteBasket.addEventListener("click", function (e) {
-  e.preventDefault;
-  localStorage.removeItem("cart");
-  alert("Le panier a été vidé ");
-  //Faire la suppression visuelle
-  const tableProducts = document.getElementById("camerasList");
-  tableProducts.innerHTML = "";
-  // Mettre le panier à Zéro après l'avoir vidé
-  const DeleteTotalPrice = document.getElementById("totalPrice");
-  DeleteTotalPrice.textContent = "0€";
-  // Supprimer le panier sans rafraîchir
-});
-
 //************** Validation formulaire ********************
 
-//Récupération du formulaire
-const formContact = document.getElementById("formContact");
 //Les différents champs
 setupInputValidation(
   "lastName",
@@ -125,6 +112,20 @@ setupInputValidation(
   "Le champ est invalide"
 );
 
+function setupEmptyBasketButton() {
+  btnDeleteBasket.addEventListener("click", function (e) {
+    e.preventDefault;
+    localStorage.removeItem("cart");
+    alert("Le panier a été vidé ");
+    //Faire la suppression visuelle
+    const tableProducts = document.getElementById("camerasList");
+    tableProducts.innerHTML = "";
+    // Mettre le panier à Zéro après l'avoir vidé
+    const DeleteTotalPrice = document.getElementById("totalPrice");
+    DeleteTotalPrice.textContent = "0€";
+  });
+}
+
 // validation des champs avant envoi
 function setupInputValidation(id, errorId, regex, errorMessage) {
   const input = document.getElementById(id);
@@ -136,6 +137,10 @@ function setupInputValidation(id, errorId, regex, errorMessage) {
 // Validation du formulaire avant envoi
 
 document.getElementById("submitButton").addEventListener("click", function (e) {
+  if (getCart().length === 0) {
+    alert("Attention votre panier est vide");
+    return;
+  }
   if (
     !validateInput(
       "lastName",

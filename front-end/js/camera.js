@@ -1,4 +1,4 @@
-import { addToCart } from "./utils/cart.js";
+import { addToCart, getCart } from "./utils/cart.js";
 
 main();
 function main() {
@@ -13,6 +13,7 @@ function main() {
     .then((camera) => {
       fillPageInformation(camera);
       setupOrderButton(camera);
+      document.getElementById("basketNumber").textContent = getCart().length;
     });
 }
 
