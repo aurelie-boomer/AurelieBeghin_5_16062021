@@ -80,37 +80,41 @@ function removeProductFromCart(product) {
 
 //************** Validation formulaire ********************
 
-//Les différents champs
-setupInputValidation(
-  "lastName",
-  "errorLastName",
-  /^[a-zA-Z-\séèäêîï]{3,20}$/,
-  "Le champ est invalide"
-);
-setupInputValidation(
-  "firstName",
-  "errorFirstName",
-  /^[a-zA-Z-\séèäêîï]{3,20}$/,
-  "Le champ est invalide"
-);
-setupInputValidation(
-  "city",
-  "errorCity",
-  /^[a-zA-Z-\séèäêîï]{3,20}$/,
-  "Le champ est invalide"
-);
-setupInputValidation(
-  "address",
-  "errorAddress",
-  /^[0-9a-zA-Z-\séèäêîï]{3,20}$/,
-  "Le champ est invalide"
-);
-setupInputValidation(
-  "email",
-  "errorEmail",
-  /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/,
-  "Le champ est invalide"
-);
+//Les différents regex qui aide à valider les champs du formulaire
+regexValidation();
+
+function regexValidation() {
+  setupInputValidation(
+    "lastName",
+    "errorLastName",
+    /^[a-zA-Z-\séèäêîï]{3,20}$/,
+    "Le champ est invalide"
+  );
+  setupInputValidation(
+    "firstName",
+    "errorFirstName",
+    /^[a-zA-Z-\séèäêîï]{3,20}$/,
+    "Le champ est invalide"
+  );
+  setupInputValidation(
+    "city",
+    "errorCity",
+    /^[a-zA-Z-\séèäêîï]{3,20}$/,
+    "Le champ est invalide"
+  );
+  setupInputValidation(
+    "address",
+    "errorAddress",
+    /^[0-9a-zA-Z-\séèäêîï]{3,20}$/,
+    "Le champ est invalide"
+  );
+  setupInputValidation(
+    "email",
+    "errorEmail",
+    /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/,
+    "Le champ est invalide"
+  );
+}
 
 function setupEmptyBasketButton() {
   btnDeleteBasket.addEventListener("click", function (e) {
