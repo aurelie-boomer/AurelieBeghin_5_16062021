@@ -8,6 +8,7 @@ function main() {
   fillTotalPrice();
   //************** Bouton pour vider entièrement le panier ********************
   setupEmptyBasketButton();
+  setupInputsValidation();
 }
 
 function fillCartInformation(cart) {
@@ -81,9 +82,8 @@ function removeProductFromCart(product) {
 //************** Validation formulaire ********************
 
 //Les différents regex qui aide à valider les champs du formulaire
-regexValidation();
 
-function regexValidation() {
+function setupInputsValidation() {
   setupInputValidation(
     "lastName",
     "errorLastName",
@@ -145,38 +145,7 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
     alert("Attention votre panier est vide");
     return;
   }
-  if (
-    !validateInput(
-      "lastName",
-      "errorLastName",
-      /^[a-zA-Z-\séèäêîï]{3,20}$/,
-      "Le champ est invalide"
-    ) ||
-    !validateInput(
-      "firstName",
-      "errorFirstName",
-      /^[a-zA-Z-\séèäêîï]{3,20}$/,
-      "Le champ est invalide"
-    ) ||
-    !validateInput(
-      "city",
-      "errorCity",
-      /^[a-zA-Z-\séèäêîï]{3,20}$/,
-      "Le champ est invalide"
-    ) ||
-    !validateInput(
-      "address",
-      "errorAddress",
-      /^[0-9a-zA-Z-\séèäêîï]{3,20}$/,
-      "Le champ est invalide"
-    ) ||
-    !validateInput(
-      "email",
-      "errorEmail",
-      /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/,
-      "Le champ est invalide"
-    )
-  ) {
+  if (anyInputIsInvalid()) {
     return;
   }
   // envoyer au back-end pour recevoir un numéro de commande --> post
@@ -221,6 +190,41 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
         orderId;
     });
 });
+
+function anyInputIsInvalid() {
+  return (
+    !validateInput(
+      "lastName",
+      "errorLastName",
+      /^[a-zA-Z-\séèäêîï]{3,20}$/,
+      "Le champ est invalide"
+    ) ||
+    !validateInput(
+      "firstName",
+      "errorFirstName",
+      /^[a-zA-Z-\séèäêîï]{3,20}$/,
+      "Le champ est invalide"
+    ) ||
+    !validateInput(
+      "city",
+      "errorCity",
+      /^[a-zA-Z-\séèäêîï]{3,20}$/,
+      "Le champ est invalide"
+    ) ||
+    !validateInput(
+      "address",
+      "errorAddress",
+      /^[0-9a-zA-Z-\séèäêîï]{3,20}$/,
+      "Le champ est invalide"
+    ) ||
+    !validateInput(
+      "email",
+      "errorEmail",
+      /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/,
+      "Le champ est invalide"
+    )
+  );
+}
 
 function validateInput(id, errorId, regex, errorMessage) {
   const input = document.getElementById(id);
