@@ -11,7 +11,9 @@ function main() {
       return resultat.json();
     })
     .then((camera) => {
+      //remplir la page des informations de la caméra
       fillPageInformation(camera);
+      //bouton "commande" qui ajoute la caméra et sa lentille au panier
       setupOrderButton(camera);
       document.getElementById("basketNumber").textContent = getCart().length;
     });
